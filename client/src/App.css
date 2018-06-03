@@ -1,0 +1,164 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  color: #ecf0f1;
+  background: #cc2b5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #753a88,
+    #cc2b5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #753a88,
+    #cc2b5e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  position: relative;
+  font-size: 1.5rem;
+  width: 50%;
+  height: 90vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  background: url("./TinderStarter_new.svg");
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  background-size: cover;
+  margin-top: 50px;
+}
+.heading {
+  text-shadow: 4px 4px 2px #753a88;
+  animation: pop-in 0.6s cubic-bezier(0, 1.04, 1, 1.3) forwards;
+  animation-duration: 0.4s;
+}
+
+.desc {
+  animation: pop-in 0.6s cubic-bezier(0, 1.04, 1, 1.3) forwards;
+  animation-duration: 0.6s;
+}
+
+.starter {
+  border: 1px solid #753a88;
+  padding: 20px;
+  background: #ecf0f1;
+  color: #753a88;
+  font-weight: bold;
+  /* font-size: 30px; */
+  animation: pop-in 0.6s cubic-bezier(0, 1.04, 1, 1.3) forwards;
+  animation-duration: 0.8s;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  display: block;
+}
+
+.btn {
+  padding: 20px 30px;
+  background: #753a88;
+  border: 2px solid #ecf0f1;
+  font-size: 1.2rem;
+  color: #ecf0f1;
+  animation: pop-in 0.6s cubic-bezier(0, 1.04, 0.99, 1.66) forwards;
+  animation-duration: 1s;
+  cursor: pointer;
+}
+
+footer {
+  opacity: 0;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  animation: pop-in 0.6s cubic-bezier(0, 1.04, 0.9, 0.95) forwards;
+  animation-delay: 1s;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Button animation */
+
+.btn {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translate(13%, 190%) rotate(-30deg);
+  transform: translate(13%, 190%) rotate(-30deg);
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translate(-13%, -190%) rotate(-30deg);
+  transform: translate(-13%, -190%) rotate(-30deg);
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn::before {
+  -webkit-transition-delay: 0.2s; /* Safari */
+  transition-delay: 0.2s;
+}
+.btn:hover::before,
+.btn:hover::after {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
